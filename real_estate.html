@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="KMS Infrastructures — Prefabricated, pre-engineered and modular building solutions.">
-  <title>KMS INFRASTRUCTURES — Engineered to Deliver</title>
+    content="KMS Infrastructures — Residential, commercial and gated community real estate solutions across India.">
+  <title>KMS INFRASTRUCTURES — Real Estate, Built Better</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,6 +139,10 @@
       width: 82px;
       height: 82px;
       padding: 12px;
+      /* border: 1px solid rgba(255, 90, 31, .55);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 35px rgba(255, 90, 31, .08); */
     }
 
     .loader-logo img {
@@ -645,15 +649,13 @@
     }
 
     .solution-card {
-      min-height: 490px;
-      padding: 32px;
+      min-height: 390px;
+      padding: 30px;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       background: linear-gradient(145deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, .006));
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
       transition: .5s var(--ease);
     }
 
@@ -718,9 +720,10 @@
     }
 
     .card-link {
-      position: relative;
-      z-index: 1;
-      margin-top: auto;
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 23px;
       padding-top: 16px;
       border-top: 1px solid var(--line);
       text-decoration: none;
@@ -1010,7 +1013,7 @@
     }
 
     .project {
-      min-height: 390px;
+      min-height: 440px;
       position: relative;
       overflow: hidden;
       border: 1px solid var(--line);
@@ -1496,16 +1499,16 @@
         gap: 60px
       }
 
-      .solution-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
       .process-track {
         grid-template-columns: repeat(2, 1fr)
       }
 
       .process-track::before {
         display: none
+      }
+
+      .solution-grid {
+        grid-template-columns: repeat(3, 1fr)
       }
 
       .project-grid {
@@ -1617,7 +1620,7 @@
       }
 
       .solution-card {
-        min-height: 305px
+        min-height: 320px
       }
 
       .adv-card,
@@ -1723,7 +1726,7 @@
       <div class="loader-logo">
         <img src="kms_infra_logo.png" alt="KMS Infrastructures">
       </div>
-      <div class="loader-label">PREFAB INFRASTRUCTURES &amp; ENGINEERED SOLUTIONS</div>
+      <div class="loader-label">REAL ESTATE &amp; DEVELOPMENT SOLUTIONS</div>
     </div>
     <div class="loader-bar"></div>
   </div>
@@ -1739,12 +1742,11 @@
 
     <nav aria-label="Primary navigation">
       <ul>
-       <!-- <li><a href="home.html">Home</a></li> -->
-        <li><a class="active" href="index.html">Prefab</a></li>
-        <li><a href="real_estate.html">Real Estate</a></li>
+        <!-- <li><a href="home.html">Home</a></li> -->
+        <li><a href="index.html">Prefab</a></li>
+        <li><a class="active" href="real_estate.html">Real Estate</a></li>
         <li><a href="civil_infrastructures.html">Civil Infrastructures</a></li>
         <li><a href="contact.html">Contact</a></li>
-      </ul>
       </ul>
     </nav>
 
@@ -1758,34 +1760,35 @@
     <section class="hero" id="home">
       <div class="hero-video">
         <video autoplay muted loop playsinline preload="metadata" poster="infra_pod.png">
-          <source src="video/pod_video_4.MP4" type="video/mp4">
+          <source src="video/real_estate_video_1.MP4" type="video/mp4">
         </video>
       </div>
       <div class="hero-grid"></div>
 
       <div class="hero-content">
         <div>
-          <div class="eyebrow reveal"><i></i>PREFAB &amp; PRE-ENGINEERED BUILDING SOLUTIONS</div>
+          <div class="eyebrow reveal"><i></i>REAL ESTATE • DEVELOPMENT • LIVING</div>
           <h1 class="reveal">
-            WE BUILD<br>
-            <span class="accent" id="cycleWord">SMARTER</span><br>
-            PREFABS.
+            WE SHAPE<br>
+            <span class="accent" id="cycleWord">BETTER</span><br>
+            PLACES.
           </h1>
           <p class="hero-copy reveal">
-            <strong>KMS Infrastructures</strong> engineers factory-built prefabricated and pre-engineered structures
-            for industrial, institutional and residential clients — built off-site, installed fast, and made to
-            perform.
+            <strong>KMS Infrastructures</strong> creates thoughtfully planned real estate destinations across
+            residential,
+            commercial and gated community segments — combining strong planning, contemporary design and
+            dependable execution from concept to completion.
           </p>
           <div class="actions reveal">
-            <a class="btn btn-primary" href="#contact">REQUEST A SITE VISIT <b>↗</b></a>
-            <a class="btn btn-outline" href="#solutions">EXPLORE SOLUTIONS <b>↘</b></a>
+            <a class="btn btn-primary" href="#contact">SCHEDULE A DISCUSSION <b>↗</b></a>
+            <a class="btn btn-outline" href="#real-estate">EXPLORE PROPERTIES <b>↘</b></a>
           </div>
         </div>
 
         <aside class="hero-side reveal" aria-label="KMS highlights">
-          <div class="hero-stat"><strong>01</strong><span>Engineered Systems</span></div>
-          <div class="hero-stat"><strong>02</strong><span>Controlled Fabrication</span></div>
-          <div class="hero-stat"><strong>03</strong><span>Site-Ready Delivery</span></div>
+          <div class="hero-stat"><strong>01</strong><span>Thoughtful Planning</span></div>
+          <div class="hero-stat"><strong>02</strong><span>Quality Execution</span></div>
+          <div class="hero-stat"><strong>03</strong><span>Long-Term Value</span></div>
         </aside>
       </div>
 
@@ -1794,50 +1797,50 @@
 
 
     <!-- 01 — PREFAB SOLUTIONS -->
-    <!-- <section class="section solutions" id="solutions">
+    <!-- <section class="section solutions" id="real-estate">
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="eyebrow"><i></i>OUR PREFAB SOLUTIONS</div>
+            <div class="eyebrow"><i></i>OUR REAL ESTATE</div>
             <h2 class="section-title">Structures With Purpose.<br><em>Built For Every Sector.</em></h2>
           </div>
           <p class="section-note">
-            A focused range of prefabricated and pre-engineered building systems shaped around how sites operate —
-            with an emphasis on speed, durability, practical layouts and consistent factory quality.
+            A focused real estate portfolio shaped around how people live, work and connect — with an emphasis on
+            planning,
+            design quality, practical amenities and enduring value.
           </p>
         </div>
 
-        <div class="solution-grid prefab-products">
+        <div class="solution-grid real-estate-products">
           <article class="solution-card reveal">
             <div class="solution-no">01</div>
-            <div class="solution-meta">INDUSTRIAL PREFAB</div>
-            <h3>Built For Site Operations</h3>
-            <p>Factory-built site offices, workforce facilities and industrial support structures engineered for
-              demanding operating conditions.</p>
-            <a class="card-link" href="#contact">Explore Industrial <b>↗</b></a>
+            <div class="solution-meta">RESIDENTIAL</div>
+            <h3>Homes Designed Around Life</h3>
+            <p>Thoughtfully planned residences that balance contemporary architecture, everyday comfort, efficient
+              layouts and lasting value.</p>
+            <a class="card-link" href="#contact">Explore Residential <b>↗</b></a>
           </article>
 
           <article class="solution-card reveal">
             <div class="solution-no">02</div>
-            <div class="solution-meta">INSTITUTIONAL PREFAB</div>
-            <h3>Rapid-Build Facilities</h3>
-            <p>Pre-engineered structures for healthcare, education and institutional needs — designed for fast
-              deployment without compromising quality.</p>
-            <a class="card-link" href="#contact">Explore Institutional <b>↗</b></a>
+            <div class="solution-meta">COMMERCIAL</div>
+            <h3>Spaces Built For Business</h3>
+            <p>Purpose-led commercial environments planned for visibility, functionality, customer experience and future
+              growth.</p>
+            <a class="card-link" href="#contact">Explore Commercial <b>↗</b></a>
           </article>
 
           <article class="solution-card reveal">
             <div class="solution-no">03</div>
-            <div class="solution-meta">MODULAR ACCOMMODATION</div>
-            <h3>Scalable Living Systems</h3>
-            <p>Modular accommodation and residential prefab systems engineered for efficient, comfortable and
-              expandable living spaces.</p>
-            <a class="card-link" href="#contact">Explore Accommodation <b>↗</b></a>
+            <div class="solution-meta">GATED COMMUNITY</div>
+            <h3>Connected Communities</h3>
+            <p>Integrated neighbourhoods combining homes, landscape, amenities, security and shared spaces into one
+              complete experience.</p>
+            <a class="card-link" href="#contact">Explore Communities <b>↗</b></a>
           </article>
         </div>
       </div>
     </section> -->
-
 
     <!-- 02 — KMS ADVANTAGE -->
     <section class="section advantage" id="advantage">
@@ -1845,23 +1848,24 @@
         <div class="reveal">
           <div class="eyebrow"><i></i>THE KMS ADVANTAGE</div>
           <h2 class="advantage-title">
-            <span>Control The</span>
-            <strong>Build.</strong>
-            <span>Control The</span>
-            <em>Outcome.</em>
+            <span>Shape The</span>
+            <strong>Vision.</strong>
+            <span>Build The</span>
+            <em>Value.</em>
           </h2>
           <p class="advantage-copy">
-            KMS combines engineering, controlled fabrication and site installation into one coordinated prefab
-            workflow — giving projects greater predictability from brief to handover.
+            KMS brings planning, design, execution and delivery together through one coordinated real estate workflow —
+            giving
+            every development a clear direction from the first concept to the finished destination.
           </p>
           <div class="advantage-signature">
-            <span>ENGINEERED</span><i></i><span>FABRICATED</span><i></i><span>DELIVERED</span>
+            <span>PLAN</span><i></i><span>DESIGN</span><i></i><span>DELIVER</span>
           </div>
         </div>
 
         <div class="advantage-cards">
           <article class="adv-card reveal">
-            <div class="adv-top"><span>01</span><span>QUALITY CONTROL</span></div>
+            <div class="adv-top"><span>01</span><span>DESIGN QUALITY</span></div>
             <div class="adv-icon">
               <svg viewBox="0 0 64 64" fill="none">
                 <path d="M9 55V25L32 10L55 25V55" stroke="currentColor" stroke-width="1.6" />
@@ -1869,21 +1873,23 @@
                 <path d="M44 45L48 49L56 40" stroke="currentColor" stroke-width="1.8" />
               </svg>
             </div>
-            <h3>Factory Quality</h3>
-            <p>Controlled fabrication and inspection create consistent output before components reach site.</p>
+            <h3>Thoughtful Design</h3>
+            <p>Every space is planned around usability, visual quality, context and the needs of the people who will
+              experience it.</p>
             <div class="adv-footer"><span>PRECISION / 01</span><b>↗</b></div>
           </article>
 
           <article class="adv-card reveal">
-            <div class="adv-top"><span>02</span><span>TIME OPTIMISATION</span></div>
+            <div class="adv-top"><span>02</span><span>SMART PLANNING</span></div>
             <div class="adv-icon">
               <svg viewBox="0 0 64 64" fill="none">
                 <path d="M8 47H39M17 38L29 26L37 34L54 17M43 17H54V28" stroke="currentColor" stroke-width="1.8" />
                 <path d="M11 54H54" stroke="currentColor" stroke-width="1" />
               </svg>
             </div>
-            <h3>Faster Delivery</h3>
-            <p>Off-site fabrication can progress alongside site preparation, reducing overall project time.</p>
+            <h3>Efficient Execution</h3>
+            <p>Clear planning, coordinated teams and disciplined execution help keep development milestones moving with
+              confidence. reducing overall project time.</p>
             <div class="adv-footer"><span>EFFICIENCY / 02</span><b>↗</b></div>
           </article>
 
@@ -1927,8 +1933,9 @@
             <h2 class="section-title">From Brief<br><em>To Building.</em></h2>
           </div>
           <p class="section-note">
-            A clear four-stage process keeps design, fabrication and installation aligned from the first conversation
-            to final handover.
+            A clear four-stage real estate process keeps planning, design, execution and handover aligned from the first
+            conversation
+            to final delivery.
           </p>
         </div>
 
@@ -1981,84 +1988,47 @@
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <div class="eyebrow"><i></i>PREFAB PROJECT TYPES</div>
-            <h2 class="section-title">Designed Around<br><em>Real Requirements.</em></h2>
+            <div class="eyebrow"><i></i>REAL ESTATE PORTFOLIO</div>
+            <h2 class="section-title">Designed Around<br><em>Real Possibilities.</em></h2>
           </div>
           <p class="section-note">
-            Explore the types of spaces KMS prefab systems can be configured to deliver.
+            Explore the development formats KMS can shape across residential, commercial and community-led real estate.
           </p>
         </div>
 
-        <div class="project-grid">
+        <div class="project-grid real-estate-portfolio">
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('workers_lounge.png')">
-            </div>
+            <div class="project-image" style="background-image:url('residential.png')"></div>
             <div class="project-number">01</div>
             <div class="project-content">
-              <small>INDUSTRIAL</small>
-              <h3>Workers Lounge</h3>
-              <p>Site offices, workforce accommodation and project support facilities.</p>
-              <div class="project-foot"><span>IND / WORKFORCE</span><b>EXPLORE ↗</b></div>
+              <small>RESIDENTIAL</small>
+              <h3>Residential Communities</h3>
+              <p>Contemporary homes and neighbourhoods planned around comfort, connectivity, landscape and everyday
+                living.</p>
+              <div class="project-foot"><span>HOME / LIFESTYLE</span><b>EXPLORE ↗</b></div>
             </div>
           </article>
 
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('rapid_care.png')">
-            </div>
+            <div class="project-image" style="background-image:url('commercial.png')"></div>
             <div class="project-number">02</div>
             <div class="project-content">
-              <small>HEALTHCARE</small>
-              <h3>Rapid Care Facilities</h3>
-              <p>Rapid-build spaces for hospitals, clinics and institutional requirements.</p>
-              <div class="project-foot"><span>HEALTH / CARE</span><b>EXPLORE ↗</b></div>
+              <small>COMMERCIAL</small>
+              <h3>Commercial Destinations</h3>
+              <p>High-utility commercial spaces designed to support businesses, customer journeys and long-term
+                performance.</p>
+              <div class="project-foot"><span>BUSINESS / GROWTH</span><b>EXPLORE ↗</b></div>
             </div>
           </article>
 
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('modular_offices.png')">
-            </div>
+            <div class="project-image" style="background-image:url('gated_community.png')"></div>
             <div class="project-number">03</div>
             <div class="project-content">
-              <small>BUSINESS</small>
-              <h3>Modular Offices</h3>
-              <p>Modern workspaces configured for changing operational needs.</p>
-              <div class="project-foot"><span>BUSINESS / OFFICE</span><b>EXPLORE ↗</b></div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-image" style="background-image:url('sales_studio.png')">
-            </div>
-            <div class="project-number">04</div>
-            <div class="project-content">
-              <small>PREFAB RETAIL</small>
-              <h3>Sales &amp; Experience Studios</h3>
-              <p>Purpose-built prefab spaces for sales, customer engagement and experiences.</p>
-              <div class="project-foot"><span>RETAIL / STUDIO</span><b>EXPLORE ↗</b></div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-image" style="background-image:url('modular_acc.png')">
-            </div>
-            <div class="project-number">05</div>
-            <div class="project-content">
-              <small>HOUSING</small>
-              <h3>Modular Accommodation</h3>
-              <p>Scalable accommodation systems designed for practical living requirements.</p>
-              <div class="project-foot"><span>HOUSING / MODULAR</span><b>EXPLORE ↗</b></div>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project-image" style="background-image:url('education_space.png')">
-            </div>
-            <div class="project-number">06</div>
-            <div class="project-content">
-              <small>INSTITUTIONAL</small>
-              <h3>Education &amp; Support Spaces</h3>
-              <p>Flexible facilities for education, training and institutional support.</p>
-              <div class="project-foot"><span>EDU / INSTITUTION</span><b>EXPLORE ↗</b></div>
+              <small>GATED COMMUNITY</small>
+              <h3>Integrated Communities</h3>
+              <p>Complete community environments with homes, amenities, landscape and shared spaces designed as one.</p>
+              <div class="project-foot"><span>COMMUNITY / AMENITIES</span><b>EXPLORE ↗</b></div>
             </div>
           </article>
         </div>
@@ -2070,14 +2040,14 @@
       <div class="cta-glow"></div>
       <div class="shell">
         <div class="cta-top reveal">
-          <span>● START A PREFAB PROJECT</span>
+          <span>● START A REAL ESTATE PROJECT</span>
           <span>KMS / 2026</span>
         </div>
 
         <div class="cta-main">
           <div class="reveal">
-            <div class="eyebrow"><i></i>HAVE A SITE IN MIND?</div>
-            <h2>Let's Build<br><em>Your Next Site.</em></h2>
+            <div class="eyebrow"><i></i>HAVE A VISION IN MIND?</div>
+            <h2>Let's Shape<br><em>Your Next Destination.</em></h2>
           </div>
 
           <div class="cta-side reveal">
@@ -2121,13 +2091,13 @@
             <img src="kms_infra_logo.png" alt="KMS Infrastructures logo">
             <span class="brand-copy">
               <span class="brand-name">KMS INFRASTRUCTURES</span>
-              <span class="brand-tagline">INNOVATE <b>•</b> ENGINEER <b>•</b> DELIVER</span>
+              <span class="brand-tagline">REAL ESTATE <b>•</b> DEVELOPMENT <b>•</b> LIVING</span>
             </span>
           </a>
-          <div class="footer-sector">PREFAB • MODULAR • SOLUTIONS</div>
+          <div class="footer-sector">REAL ESTATE • DEVELOPMENT • LIVING</div>
           <p>
-            Engineering prefabricated and pre-engineered structures for industrial, institutional and residential
-            clients across India.
+            Creating residential, commercial and gated community developments with a focus on design, execution and
+            long-term value across India.
           </p>
           <div class="footer-line"></div>
         </div>
@@ -2136,17 +2106,16 @@
           <div class="footer-col">
             <h4><span>01</span> Explore</h4>
             <a href="#home">Home</a>
-            <a href="#solutions">Prefab</a>
+            <a href="#real-estate">Real Estate</a>
             <a href="#advantage">Why KMS</a>
-            <a href="#process">Process</a>
+            <a href="#process">Our Process</a>
           </div>
 
           <div class="footer-col">
             <h4><span>02</span> Projects</h4>
-            <a href="#projects">Workforce Hubs</a>
-            <a href="#projects">Healthcare</a>
-            <a href="#projects">Modular Offices</a>
-            <a href="#projects">Housing</a>
+            <a href="#projects">Residential</a>
+            <a href="#projects">Commercial</a>
+            <a href="#projects">Gated Community</a>
           </div>
 
           <div class="footer-col footer-contact">
@@ -2193,7 +2162,7 @@
 
       // Subtle hero word animation — keeps the message clear instead of cycling full sentences.
       const word = document.getElementById('cycleWord');
-      const words = ['SMARTER', 'FASTER', 'BETTER'];
+      const words = ['BETTER', 'SMARTER', 'CONNECTED'];
       let index = 0;
 
       setInterval(() => {

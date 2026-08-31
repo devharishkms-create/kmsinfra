@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="KMS Infrastructures — Prefabricated, pre-engineered and modular building solutions.">
-  <title>KMS INFRASTRUCTURES — Engineered to Deliver</title>
+    content="KMS Infrastructures — Civil infrastructure and public development solutions across India.">
+  <title>KMS INFRASTRUCTURES — Civil Infrastructure, Built Better</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,6 +139,10 @@
       width: 82px;
       height: 82px;
       padding: 12px;
+      /* border: 1px solid rgba(255, 90, 31, .55);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 0 35px rgba(255, 90, 31, .08); */
     }
 
     .loader-logo img {
@@ -639,21 +643,19 @@
 
     .solution-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
     }
 
     .solution-card {
-      min-height: 490px;
-      padding: 32px;
+      min-height: 390px;
+      padding: 30px;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
       background: linear-gradient(145deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, .006));
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
       transition: .5s var(--ease);
     }
 
@@ -718,9 +720,10 @@
     }
 
     .card-link {
-      position: relative;
-      z-index: 1;
-      margin-top: auto;
+      position: absolute;
+      left: 30px;
+      right: 30px;
+      bottom: 23px;
       padding-top: 16px;
       border-top: 1px solid var(--line);
       text-decoration: none;
@@ -1005,12 +1008,12 @@
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
     }
 
     .project {
-      min-height: 390px;
+      min-height: 440px;
       position: relative;
       overflow: hidden;
       border: 1px solid var(--line);
@@ -1071,6 +1074,48 @@
       font-size: 8px;
       font-weight: 800;
       letter-spacing: 1.8px
+    }
+
+    /* CIVIL PROJECT ICONS — added without changing the existing card layout */
+    .project-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 15px;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      opacity: .96;
+      transition: transform .45s var(--ease), opacity .35s ease, filter .35s ease;
+    }
+
+    .project-icon svg {
+      width: 46px;
+      height: 46px;
+      display: block;
+      overflow: visible;
+    }
+
+    .project-icon svg * {
+      vector-effect: non-scaling-stroke;
+    }
+
+    .project:hover .project-icon {
+      transform: translateY(-4px) scale(1.04);
+      opacity: 1;
+      filter: drop-shadow(0 0 8px rgba(255, 90, 31, .22));
+    }
+
+    @media(max-width:700px) {
+      .project-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 12px;
+      }
+
+      .project-icon svg {
+        width: 42px;
+        height: 42px;
+      }
     }
 
     .project-content h3 {
@@ -1456,6 +1501,84 @@
       }
     }
 
+
+    /* CIVIL VISUALS */
+    .civil-visual {
+      background: linear-gradient(135deg, rgba(255, 90, 31, .18), transparent 45%), linear-gradient(0deg, rgba(7, 10, 14, .75), rgba(7, 10, 14, .05)), #17212a;
+    }
+
+    .civil-visual::before,
+    .civil-visual::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .civil-visual-1::before {
+      inset: 18% -10% 28% -10%;
+      border-top: 1px solid rgba(255, 90, 31, .55);
+      border-bottom: 1px solid rgba(255, 255, 255, .16);
+      transform: skewY(-10deg);
+      box-shadow: 0 45px 0 rgba(255, 255, 255, .05);
+    }
+
+    .civil-visual-1::after {
+      width: 34%;
+      height: 34%;
+      right: 13%;
+      top: 17%;
+      border: 1px solid rgba(255, 90, 31, .28);
+      transform: rotate(45deg);
+    }
+
+    .civil-visual-2::before {
+      width: 75%;
+      height: 75%;
+      left: 12%;
+      top: 10%;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(255, 90, 31, .035), 0 0 0 68px rgba(255, 90, 31, .018);
+    }
+
+    .civil-visual-2::after {
+      left: 8%;
+      right: 8%;
+      bottom: 22%;
+      height: 1px;
+      background: rgba(255, 90, 31, .48);
+      box-shadow: 0 -32px 0 rgba(255, 255, 255, .07), 0 32px 0 rgba(255, 255, 255, .07);
+    }
+
+    .civil-visual-3::before {
+      inset: 13%;
+      background: linear-gradient(90deg, transparent 47%, rgba(255, 90, 31, .55) 48%, rgba(255, 90, 31, .55) 52%, transparent 53%), linear-gradient(0deg, transparent 47%, rgba(255, 255, 255, .13) 48%, rgba(255, 255, 255, .13) 52%, transparent 53%);
+      border: 1px solid rgba(255, 255, 255, .10);
+      transform: rotate(8deg);
+    }
+
+    .civil-visual-3::after {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      left: 20%;
+      top: 22%;
+      background: var(--accent);
+      box-shadow: 70px 95px 0 rgba(255, 90, 31, .65), 155px 25px 0 rgba(255, 90, 31, .42), 210px 125px 0 rgba(255, 90, 31, .55);
+    }
+
+    @media(max-width:1050px) {
+      .civil-works-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media(max-width:700px) {
+      .civil-works-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
     /* RESPONSIVE */
     @media(max-width:1050px) {
 
@@ -1496,16 +1619,16 @@
         gap: 60px
       }
 
-      .solution-grid {
-        grid-template-columns: repeat(2, 1fr)
-      }
-
       .process-track {
         grid-template-columns: repeat(2, 1fr)
       }
 
       .process-track::before {
         display: none
+      }
+
+      .solution-grid {
+        grid-template-columns: repeat(4, 1fr)
       }
 
       .project-grid {
@@ -1617,7 +1740,7 @@
       }
 
       .solution-card {
-        min-height: 305px
+        min-height: 320px
       }
 
       .adv-card,
@@ -1723,7 +1846,7 @@
       <div class="loader-logo">
         <img src="kms_infra_logo.png" alt="KMS Infrastructures">
       </div>
-      <div class="loader-label">PREFAB INFRASTRUCTURES &amp; ENGINEERED SOLUTIONS</div>
+      <div class="loader-label">CIVIL INFRASTRUCTURE &amp; PUBLIC DEVELOPMENT</div>
     </div>
     <div class="loader-bar"></div>
   </div>
@@ -1739,12 +1862,10 @@
 
     <nav aria-label="Primary navigation">
       <ul>
-       <!-- <li><a href="home.html">Home</a></li> -->
-        <li><a class="active" href="index.html">Prefab</a></li>
+        <li><a href="index.html">Prefab</a></li>
         <li><a href="real_estate.html">Real Estate</a></li>
-        <li><a href="civil_infrastructures.html">Civil Infrastructures</a></li>
+        <li><a class="active" href="civil_infrastructures.html">Civil Infrastructures</a></li>
         <li><a href="contact.html">Contact</a></li>
-      </ul>
       </ul>
     </nav>
 
@@ -1758,85 +1879,39 @@
     <section class="hero" id="home">
       <div class="hero-video">
         <video autoplay muted loop playsinline preload="metadata" poster="infra_pod.png">
-          <source src="video/pod_video_4.MP4" type="video/mp4">
+          <source src="video/civil_infra.MP4" type="video/mp4">
         </video>
       </div>
       <div class="hero-grid"></div>
 
       <div class="hero-content">
         <div>
-          <div class="eyebrow reveal"><i></i>PREFAB &amp; PRE-ENGINEERED BUILDING SOLUTIONS</div>
+          <div class="eyebrow reveal"><i></i>CIVIL INFRASTRUCTURE • DEVELOPMENT • PUBLIC REALM</div>
           <h1 class="reveal">
             WE BUILD<br>
-            <span class="accent" id="cycleWord">SMARTER</span><br>
-            PREFABS.
+            <span class="accent" id="cycleWord">BETTER</span><br>
+            PUBLIC SPACES.
           </h1>
           <p class="hero-copy reveal">
-            <strong>KMS Infrastructures</strong> engineers factory-built prefabricated and pre-engineered structures
-            for industrial, institutional and residential clients — built off-site, installed fast, and made to
-            perform.
+            <strong>KMS Infrastructures</strong> delivers civil infrastructure works that improve movement,
+            connectivity, public spaces and everyday urban life — from foot paths and junctions to waterfronts,
+            sports facilities, lighting and community destinations.
           </p>
           <div class="actions reveal">
-            <a class="btn btn-primary" href="#contact">REQUEST A SITE VISIT <b>↗</b></a>
-            <a class="btn btn-outline" href="#solutions">EXPLORE SOLUTIONS <b>↘</b></a>
+            <a class="btn btn-primary" href="#contact">START A CIVIL PROJECT <b>↗</b></a>
+            <a class="btn btn-outline" href="#civil-works">EXPLORE CIVIL WORKS <b>↘</b></a>
           </div>
         </div>
 
         <aside class="hero-side reveal" aria-label="KMS highlights">
-          <div class="hero-stat"><strong>01</strong><span>Engineered Systems</span></div>
-          <div class="hero-stat"><strong>02</strong><span>Controlled Fabrication</span></div>
-          <div class="hero-stat"><strong>03</strong><span>Site-Ready Delivery</span></div>
+          <div class="hero-stat"><strong>01</strong><span>Urban Connectivity</span></div>
+          <div class="hero-stat"><strong>02</strong><span>Quality Execution</span></div>
+          <div class="hero-stat"><strong>03</strong><span>Public Impact</span></div>
         </aside>
       </div>
 
       <div class="scroll"><i></i>Scroll to explore</div>
     </section>
-
-
-    <!-- 01 — PREFAB SOLUTIONS -->
-    <!-- <section class="section solutions" id="solutions">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="eyebrow"><i></i>OUR PREFAB SOLUTIONS</div>
-            <h2 class="section-title">Structures With Purpose.<br><em>Built For Every Sector.</em></h2>
-          </div>
-          <p class="section-note">
-            A focused range of prefabricated and pre-engineered building systems shaped around how sites operate —
-            with an emphasis on speed, durability, practical layouts and consistent factory quality.
-          </p>
-        </div>
-
-        <div class="solution-grid prefab-products">
-          <article class="solution-card reveal">
-            <div class="solution-no">01</div>
-            <div class="solution-meta">INDUSTRIAL PREFAB</div>
-            <h3>Built For Site Operations</h3>
-            <p>Factory-built site offices, workforce facilities and industrial support structures engineered for
-              demanding operating conditions.</p>
-            <a class="card-link" href="#contact">Explore Industrial <b>↗</b></a>
-          </article>
-
-          <article class="solution-card reveal">
-            <div class="solution-no">02</div>
-            <div class="solution-meta">INSTITUTIONAL PREFAB</div>
-            <h3>Rapid-Build Facilities</h3>
-            <p>Pre-engineered structures for healthcare, education and institutional needs — designed for fast
-              deployment without compromising quality.</p>
-            <a class="card-link" href="#contact">Explore Institutional <b>↗</b></a>
-          </article>
-
-          <article class="solution-card reveal">
-            <div class="solution-no">03</div>
-            <div class="solution-meta">MODULAR ACCOMMODATION</div>
-            <h3>Scalable Living Systems</h3>
-            <p>Modular accommodation and residential prefab systems engineered for efficient, comfortable and
-              expandable living spaces.</p>
-            <a class="card-link" href="#contact">Explore Accommodation <b>↗</b></a>
-          </article>
-        </div>
-      </div>
-    </section> -->
 
 
     <!-- 02 — KMS ADVANTAGE -->
@@ -1845,23 +1920,23 @@
         <div class="reveal">
           <div class="eyebrow"><i></i>THE KMS ADVANTAGE</div>
           <h2 class="advantage-title">
-            <span>Control The</span>
-            <strong>Build.</strong>
-            <span>Control The</span>
-            <em>Outcome.</em>
+            <span>Plan The</span>
+            <strong>Network.</strong>
+            <span>Build The</span>
+            <em>Impact.</em>
           </h2>
           <p class="advantage-copy">
-            KMS combines engineering, controlled fabrication and site installation into one coordinated prefab
-            workflow — giving projects greater predictability from brief to handover.
+            KMS brings planning, engineering, execution and delivery together through one coordinated civil
+            infrastructure workflow — keeping every site aligned from the first survey to final handover.
           </p>
           <div class="advantage-signature">
-            <span>ENGINEERED</span><i></i><span>FABRICATED</span><i></i><span>DELIVERED</span>
+            <span>PLAN</span><i></i><span>ENGINEER</span><i></i><span>DELIVER</span>
           </div>
         </div>
 
         <div class="advantage-cards">
           <article class="adv-card reveal">
-            <div class="adv-top"><span>01</span><span>QUALITY CONTROL</span></div>
+            <div class="adv-top"><span>01</span><span>ENGINEERING QUALITY</span></div>
             <div class="adv-icon">
               <svg viewBox="0 0 64 64" fill="none">
                 <path d="M9 55V25L32 10L55 25V55" stroke="currentColor" stroke-width="1.6" />
@@ -1869,26 +1944,28 @@
                 <path d="M44 45L48 49L56 40" stroke="currentColor" stroke-width="1.8" />
               </svg>
             </div>
-            <h3>Factory Quality</h3>
-            <p>Controlled fabrication and inspection create consistent output before components reach site.</p>
-            <div class="adv-footer"><span>PRECISION / 01</span><b>↗</b></div>
+            <h3>Purpose-Led Planning</h3>
+            <p>Every civil work is planned around site conditions, usability, safety, context and the people who will
+              use it.</p>
+            <div class="adv-footer"><span>PLANNING / 01</span><b>↗</b></div>
           </article>
 
           <article class="adv-card reveal">
-            <div class="adv-top"><span>02</span><span>TIME OPTIMISATION</span></div>
+            <div class="adv-top"><span>02</span><span>PROJECT CONTROL</span></div>
             <div class="adv-icon">
               <svg viewBox="0 0 64 64" fill="none">
                 <path d="M8 47H39M17 38L29 26L37 34L54 17M43 17H54V28" stroke="currentColor" stroke-width="1.8" />
                 <path d="M11 54H54" stroke="currentColor" stroke-width="1" />
               </svg>
             </div>
-            <h3>Faster Delivery</h3>
-            <p>Off-site fabrication can progress alongside site preparation, reducing overall project time.</p>
-            <div class="adv-footer"><span>EFFICIENCY / 02</span><b>↗</b></div>
+            <h3>Disciplined Execution</h3>
+            <p>Clear planning, coordinated teams and disciplined site execution keep milestones moving with confidence
+              and control.</p>
+            <div class="adv-footer"><span>DELIVERY / 02</span><b>↗</b></div>
           </article>
 
           <article class="adv-card reveal">
-            <div class="adv-top"><span>03</span><span>STRUCTURAL PERFORMANCE</span></div>
+            <div class="adv-top"><span>03</span><span>DURABILITY</span></div>
             <div class="adv-icon">
               <svg viewBox="0 0 64 64" fill="none">
                 <path d="M32 8L51 15V30C51 42 43 51 32 56C21 51 13 42 13 30V15L32 8Z" stroke="currentColor"
@@ -1896,13 +1973,14 @@
                 <path d="M22 32L29 39L43 24" stroke="currentColor" stroke-width="1.8" />
               </svg>
             </div>
-            <h3>Built To Last</h3>
-            <p>Engineered systems and durable materials are selected for demanding operating conditions.</p>
+            <h3>Built To Perform</h3>
+            <p>Materials and construction practices are selected for demanding public-use environments and long-term
+              performance.</p>
             <div class="adv-footer"><span>ENDURANCE / 03</span><b>↗</b></div>
           </article>
 
           <article class="adv-card reveal">
-            <div class="adv-top"><span>04</span><span>ADAPTIVE SYSTEMS</span></div>
+            <div class="adv-top"><span>04</span><span>URBAN RESPONSIVENESS</span></div>
             <div class="adv-icon">
               <svg viewBox="0 0 64 64" fill="none">
                 <rect x="9" y="22" width="18" height="18" stroke="currentColor" stroke-width="1.5" />
@@ -1910,9 +1988,10 @@
                 <path d="M27 31H37M18 14V22M46 40V49M18 49V40M46 14V22" stroke="currentColor" stroke-width="1.5" />
               </svg>
             </div>
-            <h3>Future Flexibility</h3>
-            <p>Modular systems can support expansion, relocation, reuse and changing project requirements.</p>
-            <div class="adv-footer"><span>ADAPTABILITY / 04</span><b>↗</b></div>
+            <h3>Designed For Context</h3>
+            <p>Civil solutions respond to the site, surrounding movement patterns, public use and changing urban
+              requirements.</p>
+            <div class="adv-footer"><span>CONTEXT / 04</span><b>↗</b></div>
           </article>
         </div>
       </div>
@@ -1924,11 +2003,11 @@
         <div class="section-head reveal">
           <div>
             <div class="eyebrow"><i></i>OUR PROCESS</div>
-            <h2 class="section-title">From Brief<br><em>To Building.</em></h2>
+            <h2 class="section-title">From Survey<br><em>To Site.</em></h2>
           </div>
           <p class="section-note">
-            A clear four-stage process keeps design, fabrication and installation aligned from the first conversation
-            to final handover.
+            A clear four-stage civil infrastructure process keeps surveying, engineering, execution and handover aligned
+            from the first site review to final delivery.
           </p>
         </div>
 
@@ -1937,8 +2016,8 @@
             <div class="process-dot">01</div>
             <div class="process-card">
               <div class="process-label">DISCOVERY</div>
-              <h3>Understand<br><span>&amp; Plan</span></h3>
-              <p>Site, space, budget and timeline assessment.</p>
+              <h3>Survey<br><span>&amp; Plan</span></h3>
+              <p>Site assessment, scope, measurements, budget and timeline review.</p>
               <div class="process-foot">BRIEF / SITE / SCOPE</div>
             </div>
           </article>
@@ -1948,7 +2027,7 @@
             <div class="process-card">
               <div class="process-label">ENGINEERING</div>
               <h3>Design<br><span>&amp; Engineer</span></h3>
-              <p>Layouts, structural systems and fabrication-ready details.</p>
+              <p>Civil layouts, engineering details, specifications and execution planning.</p>
               <div class="process-foot">DESIGN / DETAIL / ENGINEER</div>
             </div>
           </article>
@@ -1957,9 +2036,9 @@
             <div class="process-dot">03</div>
             <div class="process-card">
               <div class="process-label">PRODUCTION</div>
-              <h3>Fabricate<br><span>&amp; Inspect</span></h3>
-              <p>Controlled manufacturing with quality inspection.</p>
-              <div class="process-foot">BUILD / INSPECT / APPROVE</div>
+              <h3>Execute<br><span>&amp; Inspect</span></h3>
+              <p>Disciplined site execution with quality and progress inspection.</p>
+              <div class="process-foot">EXECUTE / INSPECT / APPROVE</div>
             </div>
           </article>
 
@@ -1967,9 +2046,9 @@
             <div class="process-dot">04</div>
             <div class="process-card">
               <div class="process-label">DELIVERY</div>
-              <h3>Transport<br><span>&amp; Install</span></h3>
-              <p>Coordinated delivery, assembly and final handover.</p>
-              <div class="process-foot">DELIVER / ASSEMBLE / HANDOVER</div>
+              <h3>Complete<br><span>&amp; Handover</span></h3>
+              <p>Finishing, testing, site readiness and coordinated final handover.</p>
+              <div class="process-foot">COMPLETE / VERIFY / HANDOVER</div>
             </div>
           </article>
         </div>
@@ -1977,90 +2056,263 @@
     </section>
 
     <!-- 04 — PROJECTS -->
-    <section class="section projects" id="projects">
+    <section class="section projects" id="civil-works">
       <div class="shell">
+
         <div class="section-head reveal">
           <div>
-            <div class="eyebrow"><i></i>PREFAB PROJECT TYPES</div>
-            <h2 class="section-title">Designed Around<br><em>Real Requirements.</em></h2>
+            <div class="eyebrow"><i></i>CIVIL PROJECT TYPES</div>
+            <h2 class="section-title">
+              Built For<br><em>Public Infrastructure.</em>
+            </h2>
           </div>
+
           <p class="section-note">
-            Explore the types of spaces KMS prefab systems can be configured to deliver.
+            From pedestrian infrastructure to public spaces, we deliver practical
+            civil solutions designed around real site requirements.
           </p>
         </div>
 
         <div class="project-grid">
+
+          <!-- 01 -->
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('workers_lounge.png')">
+            <div class="project-image" style="background-image:url('redevelopment_footpaths.png')">
             </div>
+
             <div class="project-number">01</div>
+
             <div class="project-content">
-              <small>INDUSTRIAL</small>
-              <h3>Workers Lounge</h3>
-              <p>Site offices, workforce accommodation and project support facilities.</p>
-              <div class="project-foot"><span>IND / WORKFORCE</span><b>EXPLORE ↗</b></div>
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M10 48h44M15 42c4-7 9-11 15-11s11 4 15 11" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M19 42l-4 6m30-6 4 6M24 29l-4-7m24 7 4-7" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M31 14c4 0 7 3 7 7s-3 7-7 7-7-3-7-7 3-7 7-7Z" stroke="currentColor" stroke-width="2.2" />
+                  <path d="M31 28v12m0-8-8 7m8-7 8 7m-8 1-5 8m5-8 5 8" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg></div>
+              <small>PEDESTRIAN INFRASTRUCTURE</small>
+              <h3>Redevelopment Foot Paths</h3>
+              <p>
+                Safer, cleaner pedestrian movement.
+              </p>
+
+              <div class="project-foot">
+                <span>FOOT PATH / URBAN</span>
+                <b>EXPLORE ↗</b>
+              </div>
             </div>
           </article>
 
+
+          <!-- 02 -->
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('rapid_care.png')">
+            <div class="project-image" style="background-image:url('indoor_stadiums.png')">
             </div>
+
             <div class="project-number">02</div>
+
             <div class="project-content">
-              <small>HEALTHCARE</small>
-              <h3>Rapid Care Facilities</h3>
-              <p>Rapid-build spaces for hospitals, clinics and institutional requirements.</p>
-              <div class="project-foot"><span>HEALTH / CARE</span><b>EXPLORE ↗</b></div>
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M14 24h36v19c0 7-8 11-18 11s-18-4-18-11V24Z" stroke="currentColor" stroke-width="2.2" />
+                  <path d="M14 24c0 5 8 8 18 8s18-3 18-8M18 19h28M22 14h20" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M20 24v-8m24 8v-8M31 32v20" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                </svg></div>
+              <small>SPORTS INFRASTRUCTURE</small>
+              <h3>Indoor Stadiums</h3>
+              <p>
+                Purpose-built sports environments.
+              </p>
+
+              <div class="project-foot">
+                <span>SPORTS / STADIUM</span>
+                <b>EXPLORE ↗</b>
+              </div>
             </div>
           </article>
 
+
+          <!-- 03 -->
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('modular_offices.png')">
+            <div class="project-image" style="background-image:url('restoration_pond.png')">
             </div>
+
             <div class="project-number">03</div>
+
             <div class="project-content">
-              <small>BUSINESS</small>
-              <h3>Modular Offices</h3>
-              <p>Modern workspaces configured for changing operational needs.</p>
-              <div class="project-foot"><span>BUSINESS / OFFICE</span><b>EXPLORE ↗</b></div>
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M12 46c5-3 9-3 14 0s9 3 14 0 9-3 12 0" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M13 52c5-3 9-3 14 0s9 3 14 0 9-3 12 0" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M32 46V20c0-5 3-9 8-12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                  <path d="M32 35c-9-1-14-6-15-14 8 0 14 4 15 11M33 31c1-9 6-14 14-15 0 8-5 14-14 15Z"
+                    stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+                </svg></div>
+              <small>WATER INFRASTRUCTURE</small>
+              <h3>Restoration Of Pond</h3>
+              <p>
+                Revitalising water bodies and public edges.
+              </p>
+
+              <div class="project-foot">
+                <span>WATER / PUBLIC</span>
+                <b>EXPLORE ↗</b>
+              </div>
             </div>
           </article>
 
+
+          <!-- 04 -->
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('sales_studio.png')">
+            <div class="project-image" style="background-image:url('beach_front_development.png')">
             </div>
+
             <div class="project-number">04</div>
+
             <div class="project-content">
-              <small>PREFAB RETAIL</small>
-              <h3>Sales &amp; Experience Studios</h3>
-              <p>Purpose-built prefab spaces for sales, customer engagement and experiences.</p>
-              <div class="project-foot"><span>RETAIL / STUDIO</span><b>EXPLORE ↗</b></div>
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M9 49h46M12 43c8 3 15 3 21 0s13-3 19 0" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M32 45V23m0 0c-8-1-12-5-13-11 7 0 12 3 13 9m0 2c8-1 12-5 13-11-7 0-12 3-13 9"
+                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M20 49c2-5 6-8 11-8s9 3 11 8" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                </svg></div>
+              <small>COASTAL INFRASTRUCTURE</small>
+              <h3>Beach Front Development</h3>
+              <p>
+                Public spaces shaped around the coast.
+              </p>
+
+              <div class="project-foot">
+                <span>COASTAL / PUBLIC</span>
+                <b>EXPLORE ↗</b>
+              </div>
             </div>
           </article>
 
+
+          <!-- 05 -->
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('modular_acc.png')">
+            <div class="project-image" style="background-image:url('smart_city_footpaths.png')">
             </div>
+
             <div class="project-number">05</div>
+
             <div class="project-content">
-              <small>HOUSING</small>
-              <h3>Modular Accommodation</h3>
-              <p>Scalable accommodation systems designed for practical living requirements.</p>
-              <div class="project-foot"><span>HOUSING / MODULAR</span><b>EXPLORE ↗</b></div>
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M14 50V35h36v15M20 35V25h24v10M27 25V17h10v8" stroke="currentColor" stroke-width="2.2"
+                    stroke-linejoin="round" />
+                  <path d="M18 14c3-3 7-4 11-4m-7 8c2-2 5-3 8-3m14-5c4 0 8 1 11 4m-8 1c3 0 6 1 8 3"
+                    stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                  <circle cx="32" cy="41" r="3" stroke="currentColor" stroke-width="2.2" />
+                </svg></div>
+              <small>SMART CITY INFRASTRUCTURE</small>
+              <h3>Smart City Foot Paths</h3>
+              <p>
+                Connected pedestrian infrastructure.
+              </p>
+
+              <div class="project-foot">
+                <span>SMART CITY / URBAN</span>
+                <b>EXPLORE ↗</b>
+              </div>
             </div>
           </article>
 
+
+          <!-- 06 -->
           <article class="project reveal">
-            <div class="project-image" style="background-image:url('education_space.png')">
+            <div class="project-image" style="background-image:url('tensile_roof_food_courts.png')">
             </div>
+
             <div class="project-number">06</div>
+
             <div class="project-content">
-              <small>INSTITUTIONAL</small>
-              <h3>Education &amp; Support Spaces</h3>
-              <p>Flexible facilities for education, training and institutional support.</p>
-              <div class="project-foot"><span>EDU / INSTITUTION</span><b>EXPLORE ↗</b></div>
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M11 47h42M16 47V30m32 17V30" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M16 30c5-10 27-10 32 0" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                  <path d="M21 30v17m11-17v17m11-17v17" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M32 20v-7m-4 0h8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                </svg></div>
+              <small>PUBLIC AMENITIES</small>
+              <h3>Tensile Roof Food Courts</h3>
+              <p>
+                Open, shaded community destinations.
+              </p>
+
+              <div class="project-foot">
+                <span>FOOD COURT / PUBLIC</span>
+                <b>EXPLORE ↗</b>
+              </div>
             </div>
           </article>
+
+
+          <!-- 07 -->
+          <article class="project reveal">
+            <div class="project-image" style="background-image:url('junction_improvements.png')">
+            </div>
+
+            <div class="project-number">07</div>
+
+            <div class="project-content">
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M8 31h48M31 8v48" stroke="currentColor" stroke-width="6" stroke-linecap="round" />
+                  <path d="M8 31h48M31 8v48" stroke="#0b0f14" stroke-width="2" stroke-linecap="round" />
+                  <path d="M16 24l8 7-8 7m32-14-8 7 8 7M24 16l7 8 7-8m-14 32 7-8 7 8" stroke="currentColor"
+                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></div>
+              <small>TRAFFIC INFRASTRUCTURE</small>
+              <h3>Junction Improvements</h3>
+              <p>
+                Better flow at critical road intersections.
+              </p>
+
+              <div class="project-foot">
+                <span>ROADS / JUNCTION</span>
+                <b>EXPLORE ↗</b>
+              </div>
+            </div>
+          </article>
+
+
+          <!-- 08 -->
+          <article class="project reveal">
+            <div class="project-image" style="background-image:url('street_lights.png')">
+            </div>
+
+            <div class="project-number">08</div>
+
+            <div class="project-content">
+              <div class="project-icon" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                  <path d="M32 11v39M25 50h14M29 55h6" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M32 11c7 0 11 3 14 7H18c3-4 7-7 14-7Z" stroke="currentColor" stroke-width="2.2"
+                    stroke-linejoin="round" />
+                  <path d="M22 18l-7 5m27-5 7 5M32 22v7" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" />
+                  <path d="M27 29h10l5 9H22l5-9Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+                </svg></div>
+              <small>URBAN INFRASTRUCTURE</small>
+              <h3>Street Lights</h3>
+              <p>
+                Functional illumination for safer streets.
+              </p>
+
+              <div class="project-foot">
+                <span>LIGHTING / URBAN</span>
+                <b>EXPLORE ↗</b>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -2070,20 +2322,21 @@
       <div class="cta-glow"></div>
       <div class="shell">
         <div class="cta-top reveal">
-          <span>● START A PREFAB PROJECT</span>
+          <span>● START A CIVIL PROJECT</span>
           <span>KMS / 2026</span>
         </div>
 
         <div class="cta-main">
           <div class="reveal">
-            <div class="eyebrow"><i></i>HAVE A SITE IN MIND?</div>
-            <h2>Let's Build<br><em>Your Next Site.</em></h2>
+            <div class="eyebrow"><i></i>HAVE A VISION IN MIND?</div>
+            <h2>Let's Build<br><em>Your Next Infrastructure.</em></h2>
           </div>
 
           <div class="cta-side reveal">
             <div class="cta-side-line"></div>
             <p>
-              Tell us your sector, timeline and space, and our team will get back with a feasible prefab solution.
+              Tell us your site, scope, timeline and infrastructure requirement, and our team will get back with a
+              practical civil execution approach.
             </p>
             <div class="cta-specs">
               <div><span>01</span><b>DISCOVER</b></div>
@@ -2106,8 +2359,8 @@
 
         <div class="cta-bottom reveal">
           <span class="status"><i></i>PROJECT INTAKE OPEN</span>
-          <span>BRIEF — ENGINEER — BUILD</span>
-          <span>KMS / PREFAB SYSTEMS</span>
+          <span>SURVEY — ENGINEER — BUILD</span>
+          <span>KMS / CIVIL INFRASTRUCTURE</span>
         </div>
       </div>
     </section>
@@ -2121,13 +2374,13 @@
             <img src="kms_infra_logo.png" alt="KMS Infrastructures logo">
             <span class="brand-copy">
               <span class="brand-name">KMS INFRASTRUCTURES</span>
-              <span class="brand-tagline">INNOVATE <b>•</b> ENGINEER <b>•</b> DELIVER</span>
+              <span class="brand-tagline">REAL ESTATE <b>•</b> DEVELOPMENT <b>•</b> LIVING</span>
             </span>
           </a>
-          <div class="footer-sector">PREFAB • MODULAR • SOLUTIONS</div>
+          <div class="footer-sector">CIVIL INFRASTRUCTURE • DEVELOPMENT • PUBLIC REALM</div>
           <p>
-            Engineering prefabricated and pre-engineered structures for industrial, institutional and residential
-            clients across India.
+            Delivering civil infrastructure works that improve connectivity, public spaces, safety and everyday urban
+            experience across India.
           </p>
           <div class="footer-line"></div>
         </div>
@@ -2136,17 +2389,16 @@
           <div class="footer-col">
             <h4><span>01</span> Explore</h4>
             <a href="#home">Home</a>
-            <a href="#solutions">Prefab</a>
+            <a href="#civil-works">Civil Works</a>
             <a href="#advantage">Why KMS</a>
-            <a href="#process">Process</a>
+            <a href="#process">Our Process</a>
           </div>
 
           <div class="footer-col">
             <h4><span>02</span> Projects</h4>
-            <a href="#projects">Workforce Hubs</a>
-            <a href="#projects">Healthcare</a>
-            <a href="#projects">Modular Offices</a>
-            <a href="#projects">Housing</a>
+            <a href="#civil-works">Foot Paths</a>
+            <a href="#civil-works">Public Spaces</a>
+            <a href="#civil-works">Urban Infrastructure</a>
           </div>
 
           <div class="footer-col footer-contact">
@@ -2193,7 +2445,7 @@
 
       // Subtle hero word animation — keeps the message clear instead of cycling full sentences.
       const word = document.getElementById('cycleWord');
-      const words = ['SMARTER', 'FASTER', 'BETTER'];
+      const words = ['BETTER', 'SAFER', 'CONNECTED'];
       let index = 0;
 
       setInterval(() => {
