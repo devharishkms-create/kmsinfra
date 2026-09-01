@@ -1459,6 +1459,461 @@
       }
     }
 
+
+
+    /* =========================================================
+       KMS INTERACTION LAYER — FLOATING CONTACT + FAST CURSOR
+       ========================================================= */
+    body,
+    a,
+    button,
+    input,
+    textarea,
+    select { cursor: none; }
+
+    /* Fast architectural cursor: tiny crosshair + precision ring */
+    #kmsCursor,
+    #kmsCursorDot {
+      position: fixed;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+      z-index: 100000;
+      opacity: 0;
+      will-change: transform;
+    }
+
+    #kmsCursor {
+      width: 28px;
+      height: 28px;
+      margin: -14px 0 0 -14px;
+      border: 1px solid rgba(255, 90, 31, .75);
+      border-radius: 50%;
+      transition: width .18s ease, height .18s ease, margin .18s ease,
+                  border-color .18s ease, background .18s ease;
+    }
+
+    #kmsCursor::before,
+    #kmsCursor::after {
+      content: "";
+      position: absolute;
+      background: var(--accent);
+      opacity: .8;
+    }
+
+    #kmsCursor::before {
+      width: 1px;
+      height: 8px;
+      left: 50%;
+      top: -5px;
+      transform: translateX(-50%);
+    }
+
+    #kmsCursor::after {
+      width: 8px;
+      height: 1px;
+      left: -5px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    #kmsCursorDot {
+      width: 4px;
+      height: 4px;
+      margin: -2px 0 0 -2px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(255, 90, 31, .75);
+    }
+
+    body.kms-cursor-hover #kmsCursor {
+      width: 42px;
+      height: 42px;
+      margin: -21px 0 0 -21px;
+      border-color: var(--accent);
+      background: rgba(255, 90, 31, .06);
+    }
+
+    body.kms-cursor-down #kmsCursor {
+      width: 24px;
+      height: 24px;
+      margin: -12px 0 0 -12px;
+    }
+
+    /* Fixed contact rail */
+    .kms-contact-rail {
+      position: fixed;
+      right: 26px;
+      bottom: 28px;
+      z-index: 9000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .kms-float-btn {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .16);
+      background: rgba(8, 12, 16, .88);
+      color: #fff;
+      text-decoration: none;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, .3);
+      overflow: visible;
+      transition: transform .35s var(--ease), border-color .35s ease,
+                  background .35s ease, box-shadow .35s ease;
+    }
+
+    .kms-float-btn svg {
+      width: 21px;
+      height: 21px;
+      stroke: currentColor;
+      transition: transform .35s var(--ease);
+    }
+
+    .kms-float-btn::before {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border: 1px solid rgba(255, 90, 31, .16);
+      transform: scale(.86);
+      opacity: 0;
+      transition: transform .4s var(--ease), opacity .4s ease;
+    }
+
+    .kms-float-btn:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 18px 45px rgba(255, 90, 31, .2);
+    }
+
+    .kms-float-btn:hover::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .kms-float-btn:hover svg { transform: scale(1.08); }
+
+    .kms-float-label {
+      position: absolute;
+      right: 64px;
+      top: 50%;
+      transform: translate(7px, -50%);
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      background: rgba(6, 9, 12, .96);
+      color: #cbd2d6;
+      white-space: nowrap;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .35s var(--ease);
+    }
+
+    .kms-float-btn:hover .kms-float-label {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+
+    .kms-wa {
+      border-color: rgba(255, 255, 255, .18);
+    }
+
+    .kms-wa::after {
+      content: "";
+      position: absolute;
+      right: 3px;
+      top: 3px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(255, 90, 31, .7);
+      animation: kmsOnline 2.2s ease-in-out infinite;
+    }
+
+    @keyframes kmsOnline {
+      50% { transform: scale(1.55); opacity: .45; }
+    }
+
+    /* Left enquiry trigger */
+    .kms-enquiry-trigger {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      z-index: 9000;
+      width: 46px;
+      height: 142px;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, .13);
+      border-left: 0;
+      background: rgba(8, 12, 16, .92);
+      color: #fff;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 12px 0 35px rgba(0, 0, 0, .25);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: width .35s var(--ease), background .35s ease,
+                  color .35s ease, border-color .35s ease;
+    }
+
+    .kms-enquiry-trigger span {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .kms-enquiry-trigger svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .kms-enquiry-trigger:hover,
+    .kms-enquiry-trigger.is-open {
+      width: 54px;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .kms-enquiry-trigger:hover svg,
+    .kms-enquiry-trigger.is-open svg { stroke: #fff; }
+
+    /* Slide-in enquiry panel */
+    .kms-enquiry-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 8998;
+      background: rgba(0, 0, 0, .62);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .35s ease, visibility .35s ease;
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+    }
+
+    .kms-enquiry-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .kms-enquiry-panel {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 8999;
+      width: min(455px, 92vw);
+      padding: 34px;
+      background: #0a0f14;
+      border-right: 1px solid rgba(255, 255, 255, .12);
+      box-shadow: 25px 0 80px rgba(0, 0, 0, .5);
+      transform: translateX(-105%);
+      transition: transform .65s var(--ease);
+      overflow-y: auto;
+    }
+
+    .kms-enquiry-panel.is-open { transform: translateX(0); }
+
+    .kms-enquiry-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110px;
+      height: 2px;
+      background: var(--accent);
+      box-shadow: 0 0 22px rgba(255, 90, 31, .35);
+    }
+
+    .kms-enquiry-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 38px;
+    }
+
+    .kms-enquiry-kicker {
+      color: var(--accent);
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .kms-enquiry-title {
+      font-size: clamp(38px, 7vw, 58px);
+      line-height: .9;
+      letter-spacing: -2.5px;
+      text-transform: uppercase;
+    }
+
+    .kms-enquiry-title em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .kms-enquiry-close {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      transition: .3s ease;
+    }
+
+    .kms-enquiry-close:hover {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+      transform: rotate(90deg);
+    }
+
+    .kms-enquiry-copy {
+      margin-bottom: 27px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .kms-enquiry-form {
+      display: grid;
+      gap: 13px;
+    }
+
+    .kms-field {
+      position: relative;
+    }
+
+    .kms-field-icon {
+      position: absolute;
+      left: 14px;
+      top: 17px;
+      width: 16px;
+      height: 16px;
+      color: var(--accent);
+      pointer-events: none;
+    }
+
+    .kms-field-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke: currentColor;
+    }
+
+    .kms-field input,
+    .kms-field textarea,
+    .kms-field select {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, .11);
+      outline: 0;
+      background: rgba(255, 255, 255, .025);
+      color: var(--text);
+      padding: 15px 14px 15px 43px;
+      font: 500 11px/1.4 var(--font);
+      transition: border-color .25s ease, background .25s ease,
+                  box-shadow .25s ease;
+    }
+
+    .kms-field textarea {
+      min-height: 108px;
+      resize: vertical;
+      padding-top: 15px;
+    }
+
+    .kms-field select { appearance: none; }
+
+    .kms-field input::placeholder,
+    .kms-field textarea::placeholder { color: #59656e; }
+
+    .kms-field input:focus,
+    .kms-field textarea:focus,
+    .kms-field select:focus {
+      border-color: rgba(255, 90, 31, .55);
+      background: rgba(255, 90, 31, .035);
+      box-shadow: 0 0 0 3px rgba(255, 90, 31, .055);
+    }
+
+    .kms-form-submit {
+      min-height: 52px;
+      margin-top: 4px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: .35s var(--ease);
+    }
+
+    .kms-form-submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(255, 90, 31, .18);
+    }
+
+    .kms-form-note {
+      color: #56616a;
+      font-size: 7px;
+      line-height: 1.6;
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+
+    @media(max-width:700px) {
+      .kms-contact-rail {
+        right: 15px;
+        bottom: 16px;
+        gap: 8px;
+      }
+
+      .kms-float-btn {
+        width: 48px;
+        height: 48px;
+      }
+
+      .kms-float-label { display: none; }
+
+      .kms-enquiry-trigger {
+        width: 42px;
+        height: 126px;
+      }
+
+      .kms-enquiry-panel {
+        width: min(430px, 92vw);
+        padding: 28px 22px;
+      }
+    }
+
+    @media(pointer:coarse) {
+      body, a, button, input, textarea, select { cursor: auto; }
+      #kmsCursor, #kmsCursorDot { display: none; }
+    }
+
     /* RESPONSIVE */
     @media(max-width:1050px) {
 
@@ -2083,6 +2538,95 @@
     </section>
   </main>
 
+
+  <!-- KMS FLOATING CONTACT SYSTEM -->
+  <div class="kms-contact-rail" aria-label="Quick contact actions">
+    <a class="kms-float-btn kms-wa" href="https://wa.me/910000000000" target="_blank" rel="noopener" aria-label="Chat with KMS on WhatsApp">
+      <span class="kms-float-label">WhatsApp Chat</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.1 3.9A10.1 10.1 0 0 0 3.2 15.8L2 22l6.3-1.7A10.1 10.1 0 1 0 20.1 3.9Z"/>
+        <path d="M8.4 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.8 1.8c.1.2.1.4-.1.6l-.7.8c-.1.1-.1.3 0 .5.4.7 1.1 1.5 1.9 2 .2.1.4.1.5-.1l.8-.9c.2-.2.4-.2.6-.1l1.8.8c.2.1.4.3.4.5v.5c0 .3-.1.5-.4.7-.4.3-1 .5-1.5.4-1.2-.2-2.7-1-4-2.2-1.2-1.1-2.1-2.5-2.3-3.7-.1-.5.1-1.1.5-1.6Z"/>
+      </svg>
+    </a>
+
+    <button class="kms-float-btn" id="kmsEnquiryFloat" type="button" aria-label="Open enquiry form" aria-controls="kmsEnquiryPanel" aria-expanded="false">
+      <span class="kms-float-label">Send Enquiry</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8A2.5 2.5 0 0 1 17.5 16H10l-5.5 4v-4.5A2.5 2.5 0 0 1 4 13Z"/>
+        <path d="M8 8h8M8 11.5h5"/>
+      </svg>
+    </button>
+  </div>
+
+  <button class="kms-enquiry-trigger" id="kmsEnquiryTrigger" type="button" aria-label="Open enquiry form" aria-controls="kmsEnquiryPanel" aria-expanded="false">
+    <span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8A2.5 2.5 0 0 1 17.5 16H10l-5.5 4v-4.5A2.5 2.5 0 0 1 4 13Z"/>
+        <path d="M8 8h8M8 11.5h5"/>
+      </svg>
+      Enquiry
+    </span>
+  </button>
+
+  <div class="kms-enquiry-overlay" id="kmsEnquiryOverlay"></div>
+
+  <aside class="kms-enquiry-panel" id="kmsEnquiryPanel" aria-hidden="true" aria-label="Project enquiry form">
+    <div class="kms-enquiry-head">
+      <div>
+        <div class="kms-enquiry-kicker">KMS / PROJECT ENQUIRY</div>
+        <h2 class="kms-enquiry-title">Let's Build<br><em>Something</em><br>Better.</h2>
+      </div>
+      <button class="kms-enquiry-close" id="kmsEnquiryClose" type="button" aria-label="Close enquiry form">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18"/>
+        </svg>
+      </button>
+    </div>
+
+    <p class="kms-enquiry-copy">
+      Tell us what you are planning. Our team will review your requirement and connect with you to discuss the right development approach.
+    </p>
+
+    <form class="kms-enquiry-form" id="kmsEnquiryForm">
+      <div class="kms-field">
+        <span class="kms-field-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.8-3.4 3.2-5 7-5s6.2 1.6 7 5"/></svg></span>
+        <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+      </div>
+
+      <div class="kms-field">
+        <span class="kms-field-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="1.5"/><path d="m4.5 7 7.5 6 7.5-6"/></svg></span>
+        <input type="email" name="email" placeholder="Email address" autocomplete="email" required>
+      </div>
+
+      <div class="kms-field">
+        <span class="kms-field-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h3l1.5 4-2 1.5a14 14 0 0 0 5.9 5.9l1.5-2 4 1.5v3c0 1.1-.9 2-2 2C10.8 19.4 4.6 13.2 4.6 5.5c0-1.1.9-2 1.9-2Z"/></svg></span>
+        <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+      </div>
+
+      <div class="kms-field">
+        <span class="kms-field-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 9h16M8 5v4M12 5v4M16 5v4"/></svg></span>
+        <select name="interest" required aria-label="Project interest">
+          <option value="" selected disabled>Project requirement</option>
+          <option>Residential</option>
+          <option>Commercial</option>
+          <option>Gated Community</option>
+          <option>Other Development</option>
+        </select>
+      </div>
+
+      <div class="kms-field">
+        <span class="kms-field-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v14H5z"/><path d="M8 9h8M8 12h8M8 15h5"/></svg></span>
+        <textarea name="message" placeholder="Tell us briefly about your project..."></textarea>
+      </div>
+
+      <button class="kms-form-submit" type="submit">Submit Enquiry <span>↗</span></button>
+      <div class="kms-form-note">Your information is used only to respond to this enquiry.</div>
+    </form>
+  </aside>
+
+  <div id="kmsCursor" aria-hidden="true"></div>
+  <div id="kmsCursorDot" aria-hidden="true"></div>
+
   <footer>
     <div class="footer-shell">
       <div class="footer-grid">
@@ -2134,6 +2678,95 @@
     </div>
     <div class="footer-watermark" aria-hidden="true">KMS</div>
   </footer>
+
+
+  <script>
+    (() => {
+      /* Fast custom cursor — requestAnimationFrame keeps it responsive. */
+      const cursor = document.getElementById('kmsCursor');
+      const cursorDot = document.getElementById('kmsCursorDot');
+      if (cursor && cursorDot && window.matchMedia('(pointer:fine)').matches) {
+        let x = window.innerWidth / 2, y = window.innerHeight / 2;
+        let tx = x, ty = y;
+        let raf = 0;
+
+        const renderCursor = () => {
+          x += (tx - x) * 0.72;
+          y += (ty - y) * 0.72;
+          cursor.style.transform = `translate3d(${x}px,${y}px,0)`;
+          cursorDot.style.transform = `translate3d(${tx}px,${ty}px,0)`;
+          raf = requestAnimationFrame(renderCursor);
+        };
+
+        window.addEventListener('mousemove', e => {
+          tx = e.clientX;
+          ty = e.clientY;
+          cursor.style.opacity = '1';
+          cursorDot.style.opacity = '1';
+          if (!raf) raf = requestAnimationFrame(renderCursor);
+        }, { passive: true });
+
+        document.addEventListener('mouseover', e => {
+          if (e.target.closest('a, button, input, textarea, select, label')) {
+            document.body.classList.add('kms-cursor-hover');
+          }
+        });
+
+        document.addEventListener('mouseout', e => {
+          if (e.target.closest('a, button, input, textarea, select, label')) {
+            document.body.classList.remove('kms-cursor-hover');
+          }
+        });
+
+        document.addEventListener('mousedown', () => document.body.classList.add('kms-cursor-down'));
+        document.addEventListener('mouseup', () => document.body.classList.remove('kms-cursor-down'));
+        window.addEventListener('blur', () => {
+          cursor.style.opacity = '0';
+          cursorDot.style.opacity = '0';
+        });
+      }
+
+      /* Enquiry drawer */
+      const panel = document.getElementById('kmsEnquiryPanel');
+      const overlay = document.getElementById('kmsEnquiryOverlay');
+      const trigger = document.getElementById('kmsEnquiryTrigger');
+      const floatTrigger = document.getElementById('kmsEnquiryFloat');
+      const close = document.getElementById('kmsEnquiryClose');
+      const form = document.getElementById('kmsEnquiryForm');
+      const enquiryTriggers = [trigger, floatTrigger].filter(Boolean);
+
+      const setDrawer = open => {
+        panel.classList.toggle('is-open', open);
+        overlay.classList.toggle('is-open', open);
+        trigger.classList.toggle('is-open', open);
+        panel.setAttribute('aria-hidden', String(!open));
+        enquiryTriggers.forEach(btn => btn.setAttribute('aria-expanded', String(open)));
+        document.body.style.overflow = open ? 'hidden' : '';
+        if (open) setTimeout(() => panel.querySelector('input')?.focus(), 420);
+      };
+
+      enquiryTriggers.forEach(btn => btn.addEventListener('click', () => setDrawer(true)));
+      close?.addEventListener('click', () => setDrawer(false));
+      overlay?.addEventListener('click', () => setDrawer(false));
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') setDrawer(false);
+      });
+
+      form?.addEventListener('submit', e => {
+        e.preventDefault();
+        const submit = form.querySelector('.kms-form-submit');
+        const original = submit.innerHTML;
+        submit.innerHTML = 'Enquiry Ready ✓';
+        submit.style.pointerEvents = 'none';
+        setTimeout(() => {
+          submit.innerHTML = original;
+          submit.style.pointerEvents = '';
+          form.reset();
+          setDrawer(false);
+        }, 1400);
+      });
+    })();
+  </script>
 
   <script>
     (() => {
